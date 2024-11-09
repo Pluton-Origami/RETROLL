@@ -1,0 +1,182 @@
+:root {
+    --color-primario: #1e1e1e;
+    --color-secundario: #2a2a2a;
+    --color-acento: #4a90e2;
+    --color-texto: #ffffff;
+    --color-neon: #39ff14;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--color-primario);
+    background-image: url('img-rel/compus.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    color: var(--color-texto);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header {
+    text-align: center;
+    padding: 2rem 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    margin-bottom: 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 2.5rem;
+    color: var(--color-neon);
+    text-shadow: 0 0 10px var(--color-neon);
+    margin: 0;
+}
+
+.contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.dispositivo-card {
+    display: flex;
+    background-color: rgba(42, 42, 42, 0.95);
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(74, 144, 226, 0.1);
+}
+
+.dispositivo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(57, 255, 20, 0.2);
+    border-color: var(--color-neon);
+}
+
+.imagen-dispositivo {
+    flex: 0 0 300px;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.imagen-dispositivo img {
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.dispositivo-card:hover .imagen-dispositivo img {
+    transform: scale(1.05);
+}
+
+.info-dispositivo {
+    flex: 1;
+    padding: 1.5rem;
+}
+
+.info-dispositivo h2 {
+    color: var(--color-neon);
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 5px var(--color-neon);
+}
+
+.descripcion {
+    color: var(--color-texto);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+.especificaciones h3 {
+    color: var(--color-acento);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.especificaciones ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.especificaciones li {
+    color: var(--color-texto);
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.especificaciones li::before {
+    content: '►';
+    color: var(--color-acento);
+    position: absolute;
+    left: 0;
+    transform: scale(0.8);
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    .dispositivo-card {
+        flex-direction: column;
+    }
+
+    .imagen-dispositivo {
+        flex: 0 0 auto;
+    }
+
+    .imagen-dispositivo img {
+        height: 200px;
+    }
+
+    .info-dispositivo h2 {
+        font-size: 1rem;
+    }
+
+    .contenedor {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .contenedor {
+        padding: 0.5rem;
+    }
+
+    .dispositivo-card {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Efectos de scroll suave */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-primario);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-neon);
+}
