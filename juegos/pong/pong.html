@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>Pong Retro</title>
+    <link rel="stylesheet" href="pong.css">
+</head>
+<body>
+    <h1>PONG</h1>
+    <div class="contenedor-juego">
+        <div class="puntajes">
+            <span id="puntaje1">0</span>
+            <span class="separador">-</span>
+            <span id="puntaje2">0</span>
+        </div>
+        <div class="panel-juego">
+            <canvas id="pong" width="600" height="400"></canvas>
+            <div id="pantalla-inicio" class="pantalla-overlay">
+                <p>Jugador 1: W/S</p>
+                <p>Jugador 2: ↑/↓</p>
+                <p>Presiona ESPACIO para comenzar</p>
+            </div>
+            <div id="pantalla-pausa" class="pantalla-overlay" style="display: none;">
+                <p>PAUSA</p>
+                <p>Presiona ESPACIO para continuar</p>
+            </div>
+        </div>
+        <button id="btn-inicio" class="boton-inicio">JUGAR</button>
+        <div class="controles-movil">
+            <div class="jugador1-controles">
+                <button id="j1-arriba" class="boton-control">↑</button>
+                <button id="j1-abajo" class="boton-control">↓</button>
+            </div>
+            <div class="jugador2-controles">
+                <button id="j2-arriba" class="boton-control">↑</button>
+                <button id="j2-abajo" class="boton-control">↓</button>
+            </div>
+        </div>
+    </div>
+    <script src="pong.js"></script>
+</body>
+</html> 
