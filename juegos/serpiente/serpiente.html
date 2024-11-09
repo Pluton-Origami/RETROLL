@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>Serpiente Retro</title>
+    <link rel="stylesheet" href="serpiente.css">
+</head>
+<body>
+    <h1>SERPIENTE</h1>
+    <div class="contenedor-juego">
+        <div class="info-juego">
+            <p>Puntaje: <span id="puntaje">0</span></p>
+            <button id="btn-inicio" class="boton-inicio">JUGAR</button>
+        </div>
+        <div class="panel-juego">
+            <canvas id="serpiente" width="400" height="400"></canvas>
+            <div id="pantalla-inicio" class="pantalla-overlay">
+                <p>Presiona ESPACIO o el botón JUGAR para comenzar</p>
+            </div>
+            <div id="pantalla-pausa" class="pantalla-overlay" style="display: none;">
+                <p>PAUSA</p>
+                <p>Presiona ESPACIO para continuar</p>
+            </div>
+        </div>
+        <div class="controles-movil">
+            <button class="boton-control" id="izquierda">←</button>
+            <button class="boton-control" id="arriba">↑</button>
+            <button class="boton-control" id="derecha">→</button>
+            <div></div>
+            <button class="boton-control" id="abajo">↓</button>
+            <div></div>
+        </div>
+    </div>
+    <script src="serpiente.js"></script>
+</body>
+</html> 
