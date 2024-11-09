@@ -1,0 +1,141 @@
+:root {
+    --color-primario: #1e1e1e;
+    --color-secundario: #2a2a2a;
+    --color-acento: #4a90e2;
+    --color-texto: #ffffff;
+    --color-neon: #39ff14;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--color-primario);
+    background-image: url('img-rel/teves.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    color: var(--color-texto);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header {
+    text-align: center;
+    padding: 2rem 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 2.5rem;
+    color: var(--color-neon);
+    text-shadow: 0 0 10px var(--color-neon);
+    margin: 0;
+}
+
+.contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.dispositivo-card {
+    display: flex;
+    background-color: rgba(42, 42, 42, 0.9);
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.dispositivo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.imagen-dispositivo {
+    flex: 0 0 300px;
+    padding: 1rem;
+}
+
+.imagen-dispositivo img {
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.info-dispositivo {
+    flex: 1;
+    padding: 1.5rem;
+}
+
+.info-dispositivo h2 {
+    color: var(--color-neon);
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.descripcion {
+    color: var(--color-texto);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.especificaciones h3 {
+    color: var(--color-acento);
+    margin-bottom: 0.5rem;
+}
+
+.especificaciones ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.especificaciones li {
+    color: var(--color-texto);
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.especificaciones li::before {
+    content: '►';
+    color: var(--color-acento);
+    position: absolute;
+    left: 0;
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    .dispositivo-card {
+        flex-direction: column;
+    }
+
+    .imagen-dispositivo {
+        flex: 0 0 auto;
+    }
+
+    .imagen-dispositivo img {
+        height: 200px;
+    }
+
+    .info-dispositivo h2 {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .contenedor {
+        padding: 1rem;
+    }
+}
