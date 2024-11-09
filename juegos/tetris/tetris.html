@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>Tetris Retro</title>
+    <link rel="stylesheet" href="tetris.css">
+</head>
+<body>
+    <h1>TETRIS</h1>
+    <div class="contenedor-juego">
+        <div class="panel-izquierdo">
+            <div class="siguiente-pieza">
+                <h2>Siguiente</h2>
+                <canvas id="siguiente" width="100" height="100"></canvas>
+            </div>
+            <div class="puntaje">
+                <p>Puntaje: <span id="puntaje">0</span></p>
+                <p>Líneas: <span id="lineas">0</span></p>
+                <p>Nivel: <span id="nivel">1</span></p>
+            </div>
+            <button id="btn-inicio" class="boton-inicio">JUGAR</button>
+        </div>
+        <div class="panel-principal">
+            <canvas id="tetris" width="240" height="400"></canvas>
+            <div id="pantalla-inicio" class="pantalla-overlay">
+                <p>Presiona ESPACIO o el botón JUGAR</p>
+                <p>para comenzar</p>
+            </div>
+            <div id="pantalla-pausa" class="pantalla-overlay" style="display: none;">
+                <p>PAUSA</p>
+                <p>Presiona ESPACIO para continuar</p>
+            </div>
+        </div>
+        <div class="controles-movil">
+            <button id="izquierda" class="boton-control">←</button>
+            <button id="rotar" class="boton-control">🔄</button>
+            <button id="derecha" class="boton-control">→</button>
+            <button id="bajar" class="boton-control">↓</button>
+            <button id="soltar" class="boton-control">⤓</button>
+        </div>
+    </div>
+    <script src="tetris.js"></script>
+</body>
+</html> 
