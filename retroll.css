@@ -1,0 +1,264 @@
+:root {
+    --color-primario: #1e1e1e;
+    --color-secundario: #2a2a2a;
+    --color-acento: #4a90e2;
+    --color-texto: #ffffff;
+    --color-neon: #39ff14;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--color-primario);
+    color: var(--color-texto);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-image: url('img/fondo.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+header {
+    text-align: center;
+    padding: 2rem 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.retro-text {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--color-neon);
+    text-shadow: 0 0 10px var(--color-neon), 0 0 20px var(--color-neon), 0 0 30px var(--color-neon);
+    animation: neon-glow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes neon-glow {
+    from {
+        text-shadow: 0 0 10px var(--color-neon), 0 0 20px var(--color-neon), 0 0 30px var(--color-neon);
+    }
+    to {
+        text-shadow: 0 0 5px var(--color-neon), 0 0 10px var(--color-neon), 0 0 15px var(--color-neon);
+    }
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    margin-top: 0;
+    font-weight: 300;
+    color: var(--color-acento);
+}
+
+.contenedor-cuadricula {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.elemento-cuadricula {
+    background-color: rgba(42, 42, 42, 0.8);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    text-decoration: none;
+    color: var(--color-texto);
+    display: block;
+}
+
+.elemento-cuadricula:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.contenedor-imagen {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 75%;
+    overflow: hidden;
+}
+
+.elemento-cuadricula img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.elemento-cuadricula:hover img {
+    transform: scale(1.1);
+}
+
+.superposicion {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    transform: translateY(100%);
+    transition: .5s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.elemento-cuadricula:hover .superposicion {
+    transform: translateY(0);
+}
+
+.superposicion h2 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.5rem;
+    color: var(--color-neon);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.contenido-superposicion {
+    text-align: center;
+}
+
+.superposicion p {
+    color: white;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.superposicion ul {
+    color: white;
+    font-size: 0.9rem;
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .retro-text {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .contenedor-cuadricula {
+        grid-template-columns: 1fr;
+    }
+
+    .superposicion h2 {
+        font-size: 1.2rem;
+    }
+
+    .superposicion p {
+        font-size: 0.9rem;
+    }
+
+    .superposicion ul {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .retro-text {
+        font-size: 1.5rem;
+    }
+
+    .subtitle {
+        font-size: 0.9rem;
+    }
+}
+
+.dev-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: var(--color-acento);
+    color: var(--color-texto);
+    border: none;
+    padding: 10px 20px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dev-button:hover {
+    background-color: var(--color-neon);
+    color: var(--color-primario);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: var(--color-secundario);
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid var(--color-acento);
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.close {
+    color: var(--color-texto);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: var(--color-neon);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content h2 {
+    color: var(--color-neon);
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.modal-content a {
+    display: block;
+    color: var(--color-texto);
+    text-decoration: none;
+    margin: 10px 0;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.modal-content a:hover {
+    color: var(--color-neon);
+}
