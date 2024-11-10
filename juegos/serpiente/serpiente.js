@@ -8,7 +8,7 @@ const pantallaPausa = document.getElementById('pantalla-pausa');
 let juegoIniciado = false;
 let juegoEnPausa = false;
 let intervaloPrincipal;
-let velocidad = 10;
+let velocidad = 8;
 let tamañoCuadro;
 let manzanaX;
 let manzanaY;
